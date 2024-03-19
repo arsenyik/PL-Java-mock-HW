@@ -29,15 +29,18 @@ public class MainController {
             String currency;
             String rqUID = requestDTO.getRqUID();
             Random rand = new Random();
-            BigDecimal balance = BigDecimal.valueOf(rand.nextInt(15000));
+            BigDecimal balance;
 
             if (firstDigit=='8'){
+                balance = BigDecimal.valueOf(rand.nextInt(2000));
                 maxLimit = new BigDecimal(2000);
                 currency = new String("US");
             }   else if (firstDigit == '9'){
+                balance = BigDecimal.valueOf(rand.nextInt(1000));
                 maxLimit = new BigDecimal(1000);
                 currency = new String("EU");
             }   else {
+                balance = BigDecimal.valueOf(rand.nextInt(10000));
                 maxLimit = new BigDecimal(10000);
                 currency = new String("RUB");
             }
